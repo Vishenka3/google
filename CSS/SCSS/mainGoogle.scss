@@ -5,7 +5,7 @@ body{
   margin: $zero;
   min-width: 980px;
   min-height: 100vh;
-
+  font-family: arial,sans-serif;
   header{
     display: flex;
     height: 10vh;
@@ -27,12 +27,31 @@ body{
       width: 100%;
       position: absolute;
       border-top: 1px solid #e4e4e4;
+      color: rgba(0, 0, 0, .54);
+      .simleText {
+        position: absolute;
+        top: 50%;
+        margin-top: -0.7em;
+        padding-left: 30px;
+        font-size: 15px;
+      }
+      .link {
+        color: #666;
+        line-height: 3em;
+        padding-left: 30px;
+        margin-right: -7px;
+        font-size: small;
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
     }
-    #upperFooter{
+    #upperFooter {
       height: 42px;
     }
     #lowerFooter{
-      top:50%;
+      top:42px;
       height: 40px;
     }
   };

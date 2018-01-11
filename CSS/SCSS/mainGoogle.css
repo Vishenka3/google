@@ -2,7 +2,8 @@ body {
   cursor: url("../../resources/GTA.cur"), auto;
   margin: 0 0 0 0;
   min-width: 980px;
-  min-height: 100vh; }
+  min-height: 100vh;
+  font-family: arial,sans-serif; }
   body header {
     display: flex;
     height: 10vh;
@@ -18,11 +19,27 @@ body {
     body footer div {
       width: 100%;
       position: absolute;
-      border-top: 1px solid #e4e4e4; }
+      border-top: 1px solid #e4e4e4;
+      color: rgba(0, 0, 0, 0.54); }
+      body footer div .simleText {
+        position: absolute;
+        top: 50%;
+        margin-top: -0.7em;
+        padding-left: 30px;
+        font-size: 15px; }
+      body footer div .link {
+        color: #666;
+        line-height: 3em;
+        padding-left: 30px;
+        margin-right: -7px;
+        font-size: small;
+        text-decoration: none; }
+        body footer div .link:hover {
+          text-decoration: underline; }
     body footer #upperFooter {
       height: 42px; }
     body footer #lowerFooter {
-      top: 50%;
+      top: 42px;
       height: 40px; }
 
 /*# sourceMappingURL=mainGoogle.css.map */
