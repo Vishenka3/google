@@ -6,6 +6,13 @@ body{
   min-width: 980px;
   min-height: 100vh;
   font-family: arial,sans-serif;
+  a{
+    text-decoration: none;
+    font-size: small;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
   header{
     display: flex;
     height: 10vh;
@@ -36,15 +43,10 @@ body{
         font-size: 15px;
       }
       .link {
-        color: #666;
         line-height: 3em;
         padding-left: 30px;
         margin-right: -7px;
-        font-size: small;
-        text-decoration: none;
-        &:hover{
-          text-decoration: underline;
-        }
+        color: #666;
       }
     }
     #upperFooter {
