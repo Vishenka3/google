@@ -2,7 +2,7 @@ body {
   cursor: url("../../resources/GTA.cur"), auto;
   margin: 0 0 0 0;
   min-width: 980px;
-  min-height: 100vh;
+  min-height: 556px;
   font-family: arial,sans-serif; }
   body a {
     text-decoration: none;
@@ -14,6 +14,7 @@ body {
     height: 10vh;
     background: rgba(246, 0, 3, 0.95); }
   body .container {
+    position: relative;
     display: flex;
     height: 77vh; }
   body footer {
@@ -42,5 +43,26 @@ body {
     body footer #lowerFooter {
       top: 42px;
       height: 40px; }
+      body footer #lowerFooter span {
+        position: absolute;
+        margin-right: 30px;
+        right: 6px; }
+
+.container .searchArea {
+  left: 30%;
+  margin: auto;
+  position: absolute;
+  text-align: center; }
+  .container .searchArea img {
+    width: 272px;
+    height: 92px; }
+  .container .searchArea .searchField {
+    width: 484px;
+    height: 44px; }
+    .container .searchArea .searchField input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      box-shadow: 0 0 2px #444; }
 
 /*# sourceMappingURL=mainGoogle.css.map */
