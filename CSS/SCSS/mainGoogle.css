@@ -12,7 +12,32 @@ body {
   body header {
     display: flex;
     height: 10vh;
-    background: rgba(246, 0, 3, 0.95); }
+    position: relative;
+    background: rgba(246, 0, 3, 0.57); }
+    body header .rightTop {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      right: 0; }
+      body header .rightTop .link {
+        line-height: 4.8em;
+        padding-left: 30px;
+        margin-right: -7px;
+        color: #000000; }
+        body header .rightTop .link:hover {
+          opacity: 0.7; }
+      body header .rightTop .menu {
+        background-position: -132px -38px;
+        line-height: 4.8em;
+        padding-left: 30px;
+        padding-top: 15px;
+        display: inline-block;
+        background-image: url("../../resources/icons.png"); }
+      body header .rightTop span {
+        height: 100%;
+        position: absolute;
+        margin-right: 30px;
+        right: 6px; }
   body .container {
     position: relative;
     display: flex;
@@ -50,7 +75,7 @@ body {
 
 .container .searchArea {
   top: 21.1vh;
-  left: 28.75%;
+  left: 29.1%;
   margin: auto;
   position: absolute;
   text-align: center; }
@@ -74,6 +99,8 @@ body {
     font: 16px arial,sans-serif;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
     transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .container .searchArea input::-webkit-search-cancel-button {
+      -webkit-appearance: none; }
     .container .searchArea input:hover {
       box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
     .container .searchArea input:focus {
