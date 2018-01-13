@@ -22,9 +22,9 @@ body {
         line-height: 4.8em;
         padding-left: 14px;
         margin-right: -3px;
-        color: #000000; }
+        color: rgba(0, 0, 0, 0.87); }
         body header .rightTop .link:hover {
-          opacity: 0.7; }
+          opacity: 0.77; }
       body header .rightTop .menu {
         background-position: -132px -38px;
         vertical-align: middle;
@@ -32,10 +32,17 @@ body {
         min-width: 30px;
         min-height: 30px;
         display: inline-block;
-        opacity: 0.65;
-        background-image: url("../../resources/icons.png"); }
+        opacity: 0.55;
+        background-image: url("../../resources/icons.png");
+        position: relative;
+        /*          &:target .submenu {}*/ }
         body header .rightTop .menu:hover {
           opacity: 0.85; }
+        body header .rightTop .menu .submenu {
+          display: none;
+          position: absolute; }
+          body header .rightTop .menu .submenu:target {
+            display: block; }
       body header .rightTop .logIn {
         color: #fff;
         line-height: 28px;
