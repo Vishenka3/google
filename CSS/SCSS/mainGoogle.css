@@ -21,22 +21,41 @@ body {
       right: 0; }
       body header .rightTop .link {
         line-height: 4.8em;
-        padding-left: 30px;
-        margin-right: -7px;
+        padding-left: 15px;
+        margin-right: -3px;
         color: #000000; }
         body header .rightTop .link:hover {
           opacity: 0.7; }
       body header .rightTop .menu {
         background-position: -132px -38px;
-        line-height: 4.8em;
-        padding-left: 30px;
-        padding-top: 15px;
+        vertical-align: middle;
+        margin: 0 14px 0 15px;
+        min-width: 30px;
+        min-height: 30px;
         display: inline-block;
+        opacity: 0.65;
         background-image: url("../../resources/icons.png"); }
+        body header .rightTop .menu:hover {
+          opacity: 0.85; }
+      body header .rightTop .logIn {
+        color: #fff;
+        line-height: 28px;
+        border: 1px solid #4285f4;
+        border-radius: 3px;
+        font-weight: bold;
+        display: inline-block;
+        text-decoration: none;
+        user-select: none;
+        background: -webkit-linear-gradient(top, #4387fd, #4683ea);
+        background: linear-gradient(top, #4387fd, #4683ea);
+        padding: 0 12px;
+        outline: none; }
+        body header .rightTop .logIn:active {
+          background: #980f00; }
       body header .rightTop span {
         height: 100%;
         position: absolute;
-        margin-right: 30px;
+        margin-right: 24px;
         right: 6px; }
   body .container {
     position: relative;
