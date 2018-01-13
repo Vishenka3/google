@@ -12,8 +12,7 @@ body {
   body header {
     display: flex;
     height: 10vh;
-    position: relative;
-    background: rgba(246, 0, 3, 0.57); }
+    position: relative; }
     body header .rightTop {
       width: 50%;
       height: 100%;
@@ -21,7 +20,7 @@ body {
       right: 0; }
       body header .rightTop .link {
         line-height: 4.8em;
-        padding-left: 15px;
+        padding-left: 14px;
         margin-right: -3px;
         color: #000000; }
         body header .rightTop .link:hover {
@@ -29,7 +28,7 @@ body {
       body header .rightTop .menu {
         background-position: -132px -38px;
         vertical-align: middle;
-        margin: 0 14px 0 15px;
+        margin: 0 11px 0 13px;
         min-width: 30px;
         min-height: 30px;
         display: inline-block;
@@ -51,7 +50,7 @@ body {
         padding: 0 12px;
         outline: none; }
         body header .rightTop .logIn:active {
-          background: #980f00; }
+          background: linear-gradient(top, #405afd, #566fea); }
       body header .rightTop span {
         height: 100%;
         position: absolute;
