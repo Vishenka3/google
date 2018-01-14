@@ -47,7 +47,7 @@ body {
           position: absolute;
           height: 84px;
           width: 84px;
-          text-decoration: none;
+          text-decoration: none !important;
           user-select: none;
           outline: none;
           color: rgba(0, 0, 0, 0.87);
@@ -59,7 +59,7 @@ body {
             border: 1px solid rgba(204, 204, 204, 0.51);
             -webkit-transition: all 0.1s ease-in-out; }
           body .submenu .apps td .appCell:link {
-            text-decoration: none; }
+            text-decoration: none !important; }
           body .submenu .apps td .appCell .picBlock {
             height: 64px;
             width: 64px;
