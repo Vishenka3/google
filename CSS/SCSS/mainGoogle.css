@@ -58,6 +58,8 @@ body {
             border-radius: 2px;
             border: 1px solid rgba(204, 204, 204, 0.51);
             -webkit-transition: all 0.1s ease-in-out; }
+          body .submenu .apps td .appCell:link {
+            text-decoration: none; }
           body .submenu .apps td .appCell .picBlock {
             height: 64px;
             width: 64px;

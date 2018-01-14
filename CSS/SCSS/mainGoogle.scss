@@ -53,7 +53,6 @@ body{
           position: absolute;
           height: 84px;
           width: 84px;
-
           text-decoration: none;
           user-select: none;
           outline: none;
@@ -65,6 +64,9 @@ body{
             border-radius: 2px;
             border: 1px solid rgba(204, 204, 204, 0.51);
             -webkit-transition: all 0.1s ease-in-out;
+          }
+          &:link{
+            text-decoration: none;
           }
           .picBlock {
             height: 64px;
