@@ -1,18 +1,18 @@
 body {
-  cursor: url("../../resources/GTA.cur"), auto;
+  cursor: url("../../resources/GTA.cur"), auto !important;
   margin: 0;
   min-width: 980px;
   min-height: 556px;
+  min-height: 100%;
   font-family: arial,sans-serif; }
   body a {
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: small; }
     body a:hover {
       text-decoration: underline; }
   body .submenu {
     display: none;
     z-index: 1;
-    border: 1px solid red;
     max-height: 530px;
     height: 496px;
     min-height: 196px;
@@ -30,6 +30,10 @@ body {
     font-size: small; }
     body .submenu:target {
       display: block; }
+      body .submenu:target .triaBorder {
+        display: block; }
+      body .submenu:target .apps {
+        padding-right: 10px; }
     body .submenu .apps {
       padding: 28px;
       padding-right: 27px; }
@@ -66,14 +70,30 @@ body {
             background-image: url("../../resources/p1_c82e4f78.png");
             margin: auto;
             overflow: hidden; }
+          body .submenu .apps td .appCell .earth:hover {
+            height: 64px; }
           body .submenu .apps td .appCell span {
             line-height: 20px;
             overflow: hidden;
             white-space: nowrap;
             width: 84px;
-            display: block;
+            display: inline-block;
             text-overflow: ellipsis; }
+        body .submenu .apps td .earth:hover {
+          height: 110px; }
+          body .submenu .apps td .earth:hover span {
+            white-space: normal; }
     body .submenu .more {
+      margin: 0;
+      position: absolute;
+      line-height: 40px;
+      text-align: center;
+      left: 28px;
+      width: 264px;
+      height: 1px;
+      background: #f5f5f5;
+      display: block; }
+    body .submenu .moreServ {
       margin: 0;
       line-height: 40px;
       text-align: center;
@@ -96,6 +116,7 @@ body {
         body header .rightTop .link:hover {
           opacity: 0.77; }
       body header .rightTop .menu {
+        z-index: 6;
         background-position: -132px -38px;
         vertical-align: middle;
         margin: 0 11px 0 13px;
@@ -105,10 +126,35 @@ body {
         opacity: 0.55;
         background-image: url("../../resources/icons.png");
         position: relative; }
-        body header .rightTop .menu:hover {
-          opacity: 0.85; }
-        body header .rightTop .menu:indeterminate {
-          background-color: red; }
+        body header .rightTop .menu .triaBorder {
+          border-color: transparent;
+          border-bottom-color: rgba(0, 0, 0, 0.4);
+          border-style: dashed dashed solid;
+          border-width: 0 8.5px 8.5px;
+          position: absolute;
+          left: 6.5px;
+          top: 34px;
+          z-index: 2;
+          height: 0;
+          width: 0;
+          -webkit-animation: gb__a .2s;
+          animation: gb__a .2s; }
+          body header .rightTop .menu .triaBorder:target {
+            display: none; }
+          body header .rightTop .menu .triaBorder .tria {
+            border-color: transparent;
+            border-bottom-color: #ffffff;
+            opacity: 1;
+            border-style: dashed dashed solid;
+            border-width: 0 8.5px 8.5px;
+            position: absolute;
+            left: -9px;
+            top: 1px;
+            z-index: 2;
+            height: 0;
+            width: 0;
+            -webkit-animation: gb__a .2s;
+            animation: gb__a .2s; }
       body header .rightTop .logIn {
         color: #fff;
         line-height: 28px;
@@ -166,36 +212,117 @@ body {
         right: 7px; }
 
 .container .searchArea {
-  top: 21.1vh;
-  left: 29.1%;
-  margin: auto;
-  position: absolute;
+  margin: 21.1vh auto;
   text-align: center; }
   .container .searchArea img {
     width: 272px;
     height: 92px;
-    margin-bottom: 22px; }
-  .container .searchArea .searchField {
-    width: 42.5vw;
-    min-width: 484px;
-    height: 44px;
-    margin: 0 auto; }
-  .container .searchArea input {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 5px 9px 0 16px;
-    border: none;
-    outline: none;
-    white-space: nowrap;
-    font: 16px arial,sans-serif;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1); }
-    .container .searchArea input::-webkit-search-cancel-button {
-      -webkit-appearance: none; }
-    .container .searchArea input:hover {
-      box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
-    .container .searchArea input:focus {
-      box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
+    margin-bottom: 21px; }
+  .container .searchArea .searchForm {
+    margin: 0 auto;
+    width: 833px; }
+    .container .searchArea .searchForm .lang {
+      font-size: small;
+      margin-top: 32px; }
+      .container .searchArea .searchForm .lang a {
+        margin-left: 6px; }
+    .container .searchArea .searchForm .searchField {
+      padding-top: 2px;
+      min-width: 484px;
+      height: 44px;
+      margin: 0 auto;
+      position: relative; }
+      .container .searchArea .searchForm .searchField .key_mic {
+        position: absolute;
+        padding-left: 8px;
+        width: 80px;
+        height: 44px;
+        right: 0; }
+        .container .searchArea .searchForm .searchField .key_mic .key {
+          position: absolute;
+          top: 16px;
+          z-index: 2;
+          padding-left: 10.5px;
+          padding-right: 8px;
+          margin: 0;
+          width: 24px;
+          text-align: center;
+          opacity: .55; }
+          .container .searchArea .searchForm .searchField .key_mic .key:hover {
+            opacity: .85; }
+          .container .searchArea .searchForm .searchField .key_mic .key .pic_key {
+            vertical-align: middle;
+            background: url("../../resources/tia.gif") no-repeat center;
+            display: block;
+            height: 11px;
+            width: 19px; }
+        .container .searchArea .searchForm .searchField .key_mic .mic {
+          position: absolute;
+          margin: 0;
+          top: 11px;
+          padding-left: 51px;
+          padding-right: 8px;
+          width: 24px;
+          text-align: center; }
+          .container .searchArea .searchForm .searchField .key_mic .mic .pic_mic {
+            background: url("../../resources/mic.png") no-repeat center;
+            background-size: 24px 24px;
+            display: block;
+            height: 23px;
+            width: 18px; }
+      .container .searchArea .searchForm .searchField .input_field {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 5px 9px 0 16px;
+        border: none;
+        outline: none;
+        white-space: nowrap;
+        font: 16px arial,sans-serif;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1); }
+        .container .searchArea .searchForm .searchField .input_field::-webkit-search-cancel-button {
+          -webkit-appearance: none; }
+        .container .searchArea .searchForm .searchField .input_field:hover {
+          box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
+        .container .searchArea .searchForm .searchField .input_field:focus {
+          box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
+    .container .searchArea .searchForm .buttons {
+      padding-top: 21px;
+      width: 42.5vw;
+      min-width: 484px;
+      height: 44px;
+      margin: 0 auto; }
+      .container .searchArea .searchForm .buttons .search_go {
+        height: 36px;
+        line-height: 27px;
+        background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+        background-color: #f2f2f2;
+        border: 1px solid #f2f2f2;
+        border-radius: 2px;
+        color: #757575;
+        font-family: arial,sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        margin: 11px 2px;
+        min-width: 54px;
+        padding: 0 16px;
+        text-align: center; }
+        .container .searchArea .searchForm .buttons .search_go:hover {
+          border: 1px solid #d1d1d1;
+          color: #000000; }
+
+@media screen and (max-width: 1366px) {
+  .searchField {
+    padding-left: 131px;
+    padding-right: 118px; }
+    .searchField .key_mic {
+      padding-right: 126px; } }
+@media screen and (max-width: 1250px) {
+  .searchField {
+    padding-left: 173px;
+    padding-right: 173px; }
+    .searchField .key_mic {
+      padding-right: 181px; } }
 
 /*# sourceMappingURL=mainGoogle.css.map */
