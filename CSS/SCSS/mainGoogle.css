@@ -36,8 +36,8 @@ body {
     z-index: 6;
     margin: 0;
     position: absolute;
-    top: 8.6vh;
-    right: 11.5vw; }
+    top: 55px;
+    right: 123px; }
   body .submenu {
     display: none;
     z-index: 5;
@@ -46,7 +46,7 @@ body {
     min-height: 196px;
     overflow-y: overlay;
     width: 320px;
-    top: 9.29vh;
+    top: 60px;
     right: 29px;
     position: absolute;
     background: #fff;
