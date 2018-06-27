@@ -1,51 +1,60 @@
-body {
-  cursor: url("../../resources/GTA.cur"), auto !important;
+* {
   margin: 0;
-  min-width: 980px;
-  min-height: 556px;
-  min-height: 100%;
+  padding: 0;
+  cursor: url("../../resources/GTA.cur"), auto !important; }
+
+html a {
+  text-decoration: none;
+  font-size: small;
+  cursor: pointer; }
+  html a:hover {
+    text-decoration: underline; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-family: arial,sans-serif; }
-  body a {
-    text-decoration: none !important;
-    font-size: small; }
-    body a:hover {
-      text-decoration: underline; }
   body .submenu {
     display: none;
-    z-index: 1;
-    max-height: 530px;
+    z-index: 3;
+    max-height: 555px;
     height: 496px;
     min-height: 196px;
     overflow-y: auto;
     width: 320px;
     top: 9.29vh;
-    right: 2vw;
+    right: 29px;
     position: absolute;
     background: #fff;
-    border-color: rgba(0, 0, 0, 0.2);
-    border-radius: 2.5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
     color: #000;
     -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     font-size: small; }
-    body .submenu:target {
-      display: block; }
-      body .submenu:target .triaBorder {
-        display: block; }
-      body .submenu:target .apps {
-        padding-right: 10px; }
+    body .submenu:before {
+      content: '';
+      border: 10px solid transparent;
+      border-right: 10px solid #000000;
+      position: absolute;
+      z-index: 4;
+      top: -10px;
+      left: 50%;
+      background-color: green; }
     body .submenu .apps {
-      padding: 28px;
-      padding-right: 27px; }
+      padding: 28px 10px 28px 27px; }
       body .submenu .apps td {
         position: relative;
+        margin: 1px;
         display: inline-block;
         z-index: 999;
         height: 98px;
         width: 86px;
         text-align: center;
         line-height: 40px; }
-        body .submenu .apps td .appCell {
+        body .submenu .apps td .app-cell {
           top: 8px;
           left: 2px;
           position: absolute;
@@ -56,23 +65,23 @@ body {
           outline: none;
           color: rgba(0, 0, 0, 0.87);
           display: inline;
-          padding: 1px;
           border: 1px solid white; }
-          body .submenu .apps td .appCell:hover {
+          body .submenu .apps td .app-cell:hover {
             border-radius: 2px;
             border: 1px solid rgba(204, 204, 204, 0.51);
             -webkit-transition: all 0.1s ease-in-out; }
-          body .submenu .apps td .appCell:link {
-            text-decoration: none !important; }
-          body .submenu .apps td .appCell .picBlock {
+          body .submenu .apps td .app-cell:link {
+            line-height: 10px;
+            text-decoration: none; }
+          body .submenu .apps td .app-cell .picBlock {
             height: 64px;
             width: 64px;
             background-image: url("../../resources/p1_c82e4f78.png");
             margin: auto;
             overflow: hidden; }
-          body .submenu .apps td .appCell .earth:hover {
+          body .submenu .apps td .app-cell .earth:hover {
             height: 64px; }
-          body .submenu .apps td .appCell span {
+          body .submenu .apps td .app-cell span {
             line-height: 20px;
             overflow: hidden;
             white-space: nowrap;
@@ -101,144 +110,118 @@ body {
       background: #f5f5f5; }
   body header {
     display: flex;
-    height: 10vh;
-    position: relative; }
-    body header .rightTop {
-      width: 50%;
+    justify-content: flex-end;
+    padding-right: 32px; }
+    body header .right-top a {
+      line-height: 4.8em;
+      padding-left: 14px;
+      margin-right: -3px;
+      color: rgba(0, 0, 0, 0.87); }
+      body header .right-top a:hover {
+        opacity: 0.77; }
+    body header .right-top .menu {
+      z-index: 2;
+      background-position: -132px -38px;
+      vertical-align: middle;
+      margin: 0 0 0 13px;
+      min-width: 27px;
+      min-height: 30px;
+      display: inline-block;
+      opacity: 0.55;
+      background-image: url("../../resources/icons.png");
+      position: relative; }
+      body header .right-top .menu:active + div {
+        display: block; }
+      body header .right-top .menu:focus + div {
+        display: block; }
+      body header .right-top .menu:focus-within + div {
+        display: block; }
+    body header .right-top .log-in {
+      color: #fff;
+      line-height: 28px;
+      border: 1px solid #4285f4;
+      border-radius: 2px;
+      font-weight: bold;
+      display: inline-block;
+      text-decoration: none;
+      user-select: none;
+      background: -webkit-linear-gradient(top, #4387fd, #4683ea);
+      background: linear-gradient(top, #4387fd, #4683ea);
+      padding: 0 12px;
+      outline: none; }
+      body header .right-top .log-in:active {
+        background: linear-gradient(top, #405afd, #566fea); }
+    body header .right-top span {
+      float: left;
       height: 100%;
       position: absolute;
-      right: 0; }
-      body header .rightTop .link {
-        line-height: 4.8em;
-        padding-left: 14px;
-        margin-right: -3px;
-        color: rgba(0, 0, 0, 0.87); }
-        body header .rightTop .link:hover {
-          opacity: 0.77; }
-      body header .rightTop .menu {
-        z-index: 6;
-        background-position: -132px -38px;
-        vertical-align: middle;
-        margin: 0 11px 0 13px;
-        min-width: 30px;
-        min-height: 30px;
-        display: inline-block;
-        opacity: 0.55;
-        background-image: url("../../resources/icons.png");
-        position: relative; }
-        body header .rightTop .menu .triaBorder {
-          border-color: transparent;
-          border-bottom-color: rgba(0, 0, 0, 0.4);
-          border-style: dashed dashed solid;
-          border-width: 0 8.5px 8.5px;
-          position: absolute;
-          left: 6.5px;
-          top: 34px;
-          z-index: 2;
-          height: 0;
-          width: 0;
-          -webkit-animation: gb__a .2s;
-          animation: gb__a .2s; }
-          body header .rightTop .menu .triaBorder:target {
-            display: none; }
-          body header .rightTop .menu .triaBorder .tria {
-            border-color: transparent;
-            border-bottom-color: #ffffff;
-            opacity: 1;
-            border-style: dashed dashed solid;
-            border-width: 0 8.5px 8.5px;
-            position: absolute;
-            left: -9px;
-            top: 1px;
-            z-index: 2;
-            height: 0;
-            width: 0;
-            -webkit-animation: gb__a .2s;
-            animation: gb__a .2s; }
-      body header .rightTop .logIn {
-        color: #fff;
-        line-height: 28px;
-        border: 1px solid #4285f4;
-        border-radius: 3px;
-        font-weight: bold;
-        display: inline-block;
-        text-decoration: none;
-        user-select: none;
-        background: -webkit-linear-gradient(top, #4387fd, #4683ea);
-        background: linear-gradient(top, #4387fd, #4683ea);
-        padding: 0 12px;
-        outline: none; }
-        body header .rightTop .logIn:active {
-          background: linear-gradient(top, #405afd, #566fea); }
-      body header .rightTop span {
-        float: left;
-        height: 100%;
-        position: absolute;
-        margin-right: 24px;
-        right: 6px; }
+      margin-right: 24px;
+      right: 6px; }
   body .container {
     position: relative;
     display: flex;
-    height: 77vh; }
+    flex-grow: 5; }
   body footer {
     background: #f2f2f2;
-    position: relative;
     display: flex;
-    height: 82px; }
-    body footer div {
-      width: 100%;
-      position: absolute;
+    flex-direction: column;
+    height: 82px;
+    color: rgba(0, 0, 0, 0.54); }
+    body footer section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       border-top: 1px solid #e4e4e4;
-      color: rgba(0, 0, 0, 0.54); }
-      body footer div .simleText {
-        position: absolute;
-        top: 50%;
-        margin-top: -0.7em;
-        padding-left: 30px;
-        font-size: 15px; }
-    body footer #upperFooter {
-      height: 42px; }
-    body footer #lowerFooter {
-      top: 42px;
-      height: 40px; }
-      body footer #lowerFooter .link {
+      height: 50%; }
+    body footer .simple-text {
+      font-size: 15px;
+      padding-left: 30px; }
+      body footer .simple-text:hover {
+        color: rgba(0, 0, 0, 0.84); }
+    body footer .lower-footer {
+      justify-content: space-between;
+      color: #666; }
+      body footer .lower-footer a {
         line-height: 3em;
         padding-left: 30px;
         margin-right: -7.5px;
         color: #666; }
-      body footer #lowerFooter span {
-        position: absolute;
-        margin-right: 31px;
-        right: 7px; }
+        body footer .lower-footer a:hover {
+          text-decoration: underline; }
+      body footer .lower-footer div {
+        margin-right: 30px; }
 
-.container .searchArea {
-  margin: 21.1vh auto;
+.container .search-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
   text-align: center; }
-  .container .searchArea img {
+  .container .search-area img {
     width: 272px;
     height: 92px;
-    margin-bottom: 21px; }
-  .container .searchArea .searchForm {
+    margin: 45px 0 21px 0; }
+  .container .search-area .searchForm {
     margin: 0 auto;
     width: 833px; }
-    .container .searchArea .searchForm .lang {
+    .container .search-area .searchForm .lang {
       font-size: small;
       margin-top: 32px; }
-      .container .searchArea .searchForm .lang a {
+      .container .search-area .searchForm .lang a {
         margin-left: 6px; }
-    .container .searchArea .searchForm .searchField {
+    .container .search-area .searchForm .searchField {
       padding-top: 2px;
       min-width: 484px;
       height: 44px;
       margin: 0 auto;
       position: relative; }
-      .container .searchArea .searchForm .searchField .key_mic {
+      .container .search-area .searchForm .searchField .key_mic {
         position: absolute;
         padding-left: 8px;
         width: 80px;
         height: 44px;
         right: 0; }
-        .container .searchArea .searchForm .searchField .key_mic .key {
+        .container .search-area .searchForm .searchField .key_mic .key {
           position: absolute;
           top: 16px;
           z-index: 2;
@@ -248,15 +231,15 @@ body {
           width: 24px;
           text-align: center;
           opacity: .55; }
-          .container .searchArea .searchForm .searchField .key_mic .key:hover {
+          .container .search-area .searchForm .searchField .key_mic .key:hover {
             opacity: .85; }
-          .container .searchArea .searchForm .searchField .key_mic .key .pic_key {
+          .container .search-area .searchForm .searchField .key_mic .key .pic_key {
             vertical-align: middle;
             background: url("../../resources/tia.gif") no-repeat center;
             display: block;
             height: 11px;
             width: 19px; }
-        .container .searchArea .searchForm .searchField .key_mic .mic {
+        .container .search-area .searchForm .searchField .key_mic .mic {
           position: absolute;
           margin: 0;
           top: 11px;
@@ -264,13 +247,13 @@ body {
           padding-right: 8px;
           width: 24px;
           text-align: center; }
-          .container .searchArea .searchForm .searchField .key_mic .mic .pic_mic {
+          .container .search-area .searchForm .searchField .key_mic .mic .pic_mic {
             background: url("../../resources/mic.png") no-repeat center;
             background-size: 24px 24px;
             display: block;
             height: 23px;
             width: 18px; }
-      .container .searchArea .searchForm .searchField .input_field {
+      .container .search-area .searchForm .searchField .input_field {
         width: 100%;
         height: 100%;
         margin: 0;
@@ -281,19 +264,19 @@ body {
         font: 16px arial,sans-serif;
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
         transition: box-shadow 200ms cubic-bezier(0.4, 0, 0.2, 1); }
-        .container .searchArea .searchForm .searchField .input_field::-webkit-search-cancel-button {
+        .container .search-area .searchForm .searchField .input_field::-webkit-search-cancel-button {
           -webkit-appearance: none; }
-        .container .searchArea .searchForm .searchField .input_field:hover {
+        .container .search-area .searchForm .searchField .input_field:hover {
           box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
-        .container .searchArea .searchForm .searchField .input_field:focus {
+        .container .search-area .searchForm .searchField .input_field:focus {
           box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08); }
-    .container .searchArea .searchForm .buttons {
+    .container .search-area .searchForm .buttons {
       padding-top: 21px;
       width: 42.5vw;
       min-width: 484px;
       height: 44px;
       margin: 0 auto; }
-      .container .searchArea .searchForm .buttons .search_go {
+      .container .search-area .searchForm .buttons .search_go {
         height: 36px;
         line-height: 27px;
         background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
@@ -308,10 +291,20 @@ body {
         min-width: 54px;
         padding: 0 16px;
         text-align: center; }
-        .container .searchArea .searchForm .buttons .search_go:hover {
+        .container .search-area .searchForm .buttons .search_go:hover {
           border: 1px solid #d1d1d1;
           color: #000000; }
 
+@media screen and (max-width: 1920px) {
+  padding-left: 254px;
+  padding-right: 254px;
+  .key_mic {
+    padding-right: 262px; } }
+@media screen and (max-width: 1600px) {
+  padding-left: 254px;
+  padding-right: 254px;
+  .key_mic {
+    padding-right: 262px; } }
 @media screen and (max-width: 1366px) {
   .searchField {
     padding-left: 131px;

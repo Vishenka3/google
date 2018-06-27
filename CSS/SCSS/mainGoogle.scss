@@ -1,58 +1,69 @@
-body{
-  cursor: url('../../resources/GTA.cur'), auto !important;
+*{
   margin: 0;
-  min-width: 980px;
-  min-height: 556px;
-  min-height: 100%;
-  font-family: arial,sans-serif;
-  a{
-    text-decoration: none !important;
+  padding: 0;
+  cursor: url('../../resources/GTA.cur'), auto !important;
+}
+
+html{
+  a {
+    text-decoration: none;
     font-size: small;
-    &:hover{
+    cursor: pointer;
+    &:hover {
       text-decoration: underline;
     }
-  };
+  }
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: arial,sans-serif;
 
   .submenu{
     display: none;
-    z-index: 1;
-    max-height: 530px;
+    z-index: 3;
+    max-height: 555px;
     height: 496px;
     min-height: 196px;
     overflow-y: auto;
     width: 320px;
     top: 9.29vh;
-    right: 2vw;
+    right: 29px;
     position: absolute;
 
     background: #fff;
-    border-color: rgba(0,0,0,.2);
-    border-radius: 2.5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
     color: #000;
     -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.2);
     box-shadow: 0 2px 10px rgba(0,0,0,.2);
     font-size: small;
-    &:target{
-
-      .triaBorder{display: block;};
-      display: block;
-      .apps{
-        padding-right: 10px;
-      }
+    &:before{
+      content: '';
+      border: 10px solid transparent;
+      border-right: 10px solid #000000;
+      position: absolute;
+      z-index: 4;
+      top: -10px;
+      left: 50%;
+      background-color: green;
     }
     .apps{
-      padding: 28px;
-      padding-right: 27px;
+      padding: 28px 10px 28px 27px;
       td{
         position: relative;
+        margin: 1px;
         display: inline-block;
         z-index: 999;
         height: 98px;
         width: 86px;
         text-align: center;
         line-height: 40px;
-        .appCell {
-          top:8px;
+        .app-cell {
+          top: 8px;
           left: 2px;
           position: absolute;
           height: 84px;
@@ -62,7 +73,6 @@ body{
           outline: none;
           color: rgba(0,0,0,0.87);
           display: inline;
-          padding: 1px;
           border: 1px solid rgb(255, 255, 255);
           &:hover{
             border-radius: 2px;
@@ -70,7 +80,8 @@ body{
             -webkit-transition: all 0.1s ease-in-out;
           }
           &:link{
-            text-decoration: none !important;
+            line-height: 10px;
+            text-decoration: none;
           }
           .picBlock {
             height: 64px;
@@ -121,15 +132,10 @@ body{
 
   header{
     display: flex;
-    height: 10vh;
-    position: relative;
-      .rightTop {
-        width: 50%;
-        height: 100%;
-        position: absolute;
-        right:0;
-        .link {
-
+    justify-content: flex-end;
+    padding-right: 32px;
+      .right-top {
+        a {
           line-height: 4.8em;
           padding-left: 14px;
           margin-right: -3px;
@@ -139,54 +145,37 @@ body{
           }
         }
         .menu {
-          z-index: 6;
+          z-index: 2;
           background-position: -132px -38px;
           vertical-align: middle;
-          margin: 0 11px 0 13px;
-          min-width: 30px;
+          margin: 0 0 0 13px;
+          min-width: 27px;
           min-height: 30px;
           display: inline-block;
           opacity: 0.55;
           background-image: url('../../resources/icons.png');
           position: relative;
-          .triaBorder {
-            border-color: transparent;
-            border-bottom-color: rgba(0,0,0,.4);
-            border-style: dashed dashed solid;
-            border-width: 0 8.5px 8.5px;
-            position: absolute;
-            left: 6.5px;
-            top: 34px;
-            z-index: 2;
-            height: 0;
-            width: 0;
-            -webkit-animation: gb__a .2s;
-            animation: gb__a .2s;
-            &:target {
-              display: none;
+          &:active{
+            & + div{
+              display: block;
             }
-              .tria {
-                border-color: transparent;
-                border-bottom-color: #ffffff;
-                opacity: 1;
-                border-style: dashed dashed solid;
-                border-width: 0 8.5px 8.5px;
-                position: absolute;
-                left: -9px;
-                top: 1px;
-                z-index: 2;
-                height: 0;
-                width: 0;
-                -webkit-animation: gb__a .2s;
-                animation: gb__a .2s;
-              }
+          }
+          &:focus{
+            & + div{
+              display: block;
             }
+          }
+          &:focus-within{
+            & + div{
+              display: block;
+            }
+          }
         }
-        .logIn {
+        .log-in {
           color: #fff;
           line-height: 28px;
           border: 1px solid #4285f4;
-          border-radius: 3px;
+          border-radius: 2px;
           font-weight: bold;
           display: inline-block;
           text-decoration: none;
@@ -210,57 +199,61 @@ body{
   .container{
     position: relative;
     display: flex;
-    height: 77vh;
+    flex-grow: 5;
   };
 
   footer{
     background: #f2f2f2;
-    position: relative;
     display: flex;
+    flex-direction: column;
     height: 82px;
-    div{
-      width: 100%;
-      position: absolute;
+    color: rgba(0, 0, 0, .54);
+    section{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       border-top: 1px solid #e4e4e4;
-      color: rgba(0, 0, 0, .54);
-      .simleText {
-        position: absolute;
-        top: 50%;
-        margin-top: -0.7em;
-        padding-left: 30px;
-        font-size: 15px;
-      }
+      height: 50%;
+    }
 
+    .simple-text {
+      font-size: 15px;
+      padding-left: 30px;
+      &:hover{
+        color: rgba(0, 0, 0, .84);
+      }
     }
-    #upperFooter {
-      height: 42px;
-    }
-    #lowerFooter{
-      top:42px;
-      height: 40px;
-      .link {
+
+    .lower-footer{
+      justify-content: space-between;
+      color: #666;
+      a {
         line-height: 3em;
         padding-left: 30px;
         margin-right: -7.5px;
         color: #666;
+        &:hover{
+          text-decoration: underline;
+        }
       }
-      span{
-        position: absolute;
-        margin-right: 31px;
-        right: 7px;
+      div{
+        margin-right: 30px;
       }
     }
   };
 }
 
 .container{
-  .searchArea{
-    margin: 21.1vh auto;
+  .search-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
     text-align: center;
     img{
       width: 272px;
       height: 92px;
-      margin-bottom: 21px;
+      margin: 45px 0 21px 0;
     }
     .searchForm {
       margin: 0 auto;
@@ -377,10 +370,18 @@ body{
 }
 
 @media screen and (max-width: 1920px) {
-
+  padding-left: 254px;
+  padding-right: 254px;
+  .key_mic{
+    padding-right: 262px;
+  }
 }
 @media screen and (max-width: 1600px) {
-
+  padding-left: 254px;
+  padding-right: 254px;
+  .key_mic{
+    padding-right: 262px;
+  }
 }
 @media screen and (max-width: 1366px) {
   .searchField {
